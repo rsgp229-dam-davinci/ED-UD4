@@ -1,6 +1,6 @@
 package Entornos4;
 
-public class Main { 
+public class Main {
 
     public static void main(String[] args) {
 
@@ -10,9 +10,9 @@ public class Main {
 
     public static void NuevoMetodo() {
         eCesta cesta;
-        
+
         cesta = new eCesta("Apellidos del alumno", 100, "dni del alumno", 10);
-        
+
         try {
 
             cesta.comprar(50);
@@ -35,6 +35,18 @@ public class Main {
 
         }
 
+        try {
+
+            System.out.println(" Modificación 1");
+
+            bag.Actualizarbono(-50);
+
+        } catch (Exception e) {
+
+            System.out.print("Fallo…….");
+
+        }
+        
         double bonoactual = cesta.bonificacion();
 
         System.out.println("Su bono actual es  " + bonoactual);
