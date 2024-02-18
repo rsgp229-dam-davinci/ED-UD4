@@ -1,21 +1,24 @@
 package Entornos4;
 
+/***
+ * Esta clase representa una cesta de compra y unas operaciones básicas 
+ * asociadas
+ * 
+ * @author Rafael SGP
+ * @version 1.0 Snapshot
+ */
 public class eCesta {
 
-    /*Propiedades de la Clase eCesta*/
     private String comercio;
 
     private double bono;
 
     private String usuario;
 
-   
-    /* Constructor sin argumentos */
     public eCesta() {
 
     }
 
-    /*Constructor con parámetros*/
     public eCesta(String c, double b, String u, double extra) {
 
         comercio = c;
@@ -25,40 +28,60 @@ public class eCesta {
         usuario = u;
 
     }
-
-    /*Método para fijar el comercio*/
+    
+    /***
+     * Este método permite establecer el nombre del comercio
+     * @param El nuevo nombre del comercio
+     */
     public void AsignarComercio(String nombre) {
 
         comercio = nombre;
 
     }
 
-    /* Método que indica el usuario de la cesta electrónica */
+    /***
+     * Devuelve el usuario de la cesta
+     * @return El nombre del usuario
+     */
     public String Titular() {
 
         return usuario;
 
     }
 
-    /*Método de consulta de bonificación*/
+    /***
+     * Este método devuelve la bonificación aplicada
+     * @return La bonificación aplicada a la cesta
+     */
     public double bonificacion() {
 
         return bono;
 
     }
 
-    /* Método para actualizar el bono */
-    public void ActualizarBono(double n) throws Exception {
+    /***
+     * Este método permite actualizar la bonificación que se aplica a la cesta
+     * @param n La bonificación a aplicar
+     * @throws IllegalArgumentException En caso de la bonificación ser un 
+     * negativo, el método devuelve una excepción.
+     */
+    public void ActualizarBono(double n) throws IllegalArgumentException {
 
         if (n < 0) {
-            throw new Exception("No es posible actualizar bono");
+            throw new IllegalArgumentException("No es posible actualizar bono");
         }
 
         bono = bono + n;
 
     }
-
-    /* Método para comprar */
+    
+    /***
+     * Este método consolida las compras establecidas en la cesta, restando el
+     * total al bono.
+     * @param total La cantidad total de la compra
+     * @throws Exception Este método devuelve una excepción en caso de que la
+     * compra sea inferior a cero o que la compra exceda la bonificación.
+     */
     public void comprar(double total) throws Exception {
 
         if (total <= 0) {
@@ -73,7 +96,10 @@ public class eCesta {
 
     }
 
-    /*Método que me devuelve el usuario de la cesta*/
+    /***
+     * Este método devuelve el usuario de la cesta
+     * @return El nombre del usuario
+     */
     public String identificacionUsuario() {
 
         return usuario;
@@ -88,16 +114,8 @@ public class eCesta {
         this.comercio = comercio;
     }
 
-    public double getBono() {
-        return bono;
-    }
-
     public void setBono(double bono) {
         this.bono = bono;
-    }
-
-    public String getUsuario() {
-        return usuario;
     }
 
     public void setUsuario(String usuario) {
