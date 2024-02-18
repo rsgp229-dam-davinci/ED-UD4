@@ -1,5 +1,7 @@
 package Entornos4;
 
+import java.util.random.RandomGenerator;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -39,7 +41,7 @@ public class Main {
 
             System.out.println(" Modificación 1");
 
-            bag.Actualizarbono(-50);
+            cesta.ActualizarBono(-50);
 
         } catch (Exception e) {
 
@@ -51,5 +53,9 @@ public class Main {
 
         System.out.println("Su bono actual es  " + bonoactual);
     }
-
+    
+    public static long getRandom(){
+        RandomGenerator g = RandomGenerator.of("L128X1024MixRandom");
+        return g.nextLong();
+    }
 }
