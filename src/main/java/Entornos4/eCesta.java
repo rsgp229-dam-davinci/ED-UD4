@@ -118,6 +118,8 @@ public class eCesta {
 
     /***
      * Devuelve el nombre del comercio
+     * 
+     * @return El nombre del comercio
      */
     public String getComercio() {
         return comercio;
