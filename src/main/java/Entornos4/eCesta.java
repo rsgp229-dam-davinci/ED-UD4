@@ -15,10 +15,20 @@ public class eCesta {
 
     private String usuario;
 
+    /***
+     * Constructor sin argumentos
+     */
     public eCesta() {
 
     }
 
+    /***
+     * Constructor parametrizado
+     * @param c El nombre del comercio
+     * @param b El valor del bono
+     * @param u El nombre del usuario
+     * @param extra Parámetro extra añadido durante el ejercicio
+     */
     public eCesta(String c, double b, String u, double extra) {
 
         comercio = c;
@@ -31,7 +41,7 @@ public class eCesta {
     
     /***
      * Este método permite establecer el nombre del comercio
-     * @param El nuevo nombre del comercio
+     * @param nombre El nuevo nombre del comercio
      */
     public void AsignarComercio(String nombre) {
 
@@ -106,18 +116,33 @@ public class eCesta {
 
     }
 
+    /***
+     * Devuelve el nombre del comercio
+     */
     public String getComercio() {
         return comercio;
     }
 
+    /***
+     * Método para establecer el nombre del comercio
+     * @param comercio El nuevo nombre del comercio
+     */
     public void setComercio(String comercio) {
         this.comercio = comercio;
     }
 
+    /***
+     * Establece el valor del bono
+     * @param bono El valor deseado
+     */
     public void setBono(double bono) {
         this.bono = bono;
     }
 
+    /***
+     * Establece el nombre del usuario
+     * @param usuario Nuevo nombre del usuario
+     */
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
